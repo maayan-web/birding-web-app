@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <form class="form" #loginForm="ngForm" (submit)="submit(loginForm.value)">
+        <div class="input">
+            <label for="username">{{label.username}}</label>
+            <input type="text" minlength="3" required name="username" ngModel>
+        </div>
+        <div class="input">
+            <label for="username">{{label.password}}</label>
+            <input type="password" required minlength="4" name="password" ngModel>
+        </div>
+        <div class="action">
+          <button [disabled]="!loginForm.valid">{{btn.submit}}</button>
+        </div>
+        <div>
+            <a [routerLink]="[ '/home/register' ]">{{label.register}}</a>
+        </div>
+    </form>
+</div>
+

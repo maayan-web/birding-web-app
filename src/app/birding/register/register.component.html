@@ -1,0 +1,18 @@
+<div class="wrapper">
+
+    <form [formGroup]="rForm" (submit)="print()">
+        <div class="controls">
+            <input *ngFor="let i of inputs" [formControlName]="i.formControlName" @Intpt() config>
+
+        </div>
+
+
+        <div class="action">
+            <button [disabled]="!rForm.valid">{{btn.ok | titlecase}}</button>
+            <button (click)="$event.preventDefault();cancel()">{{btn.cancel | titlecase}}</button>
+        </div>
+    </form>
+    <div>
+        {{rForm.value|json}}
+    </div>
+</div>
